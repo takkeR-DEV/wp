@@ -1,0 +1,194 @@
+.trademarks {
+  max-width: 1120px;
+  min-width: 320px;
+  font-family: 'TT Lakes';
+  background: $platinum-color;
+  margin: 0;
+
+  &__header {
+    min-height: 56px;
+    background: linear-gradient(to right, #f8f8f8, #ffffff);
+  }
+
+  &__header h2 {
+    display: inline-block;
+    opacity: 0.6;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  &__wrapper {
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
+  &__main {
+    padding: 20px 0 0 0;
+  }
+  &__logo {
+    flex-shrink: 0;
+    width: 224px;
+    height: 72px;
+    border: 2px solid $logo-border-color;
+    border-radius: 5px;
+    background: $white-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* тут отступ пагинации */
+    margin: 0 10px 16px 0;
+    padding: 0 15px 0 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    min-width: 0px;
+  }
+  &__logo:last-child {
+    visibility: hidden;
+  }
+  @media all and (max-width: 767px) {
+    &__wrapper:nth-child(2)::after {
+      content: '';
+      position: absolute;
+      right: 0px;
+      top: 20px;
+      z-index: 1;
+      width: 50px;
+      height: 70px;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 80%
+      );
+    }
+  }
+  &__button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    vertical-align: bottom;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__hidden {
+    width: 240px;
+    height: 72px;
+    margin: 0 10px 16px 0;
+  }
+  @media all and (min-width: 768px) {
+    &__hidden {
+      width: 224px;
+      height: 72px;
+      margin: 0 10px 16px 0;
+    }
+    .swiper-pagination {
+      display: none;
+    }
+    &__main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow: hidden;
+      max-height: 170px;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+    }
+    &__wrapper {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+  &__main_open {
+    max-height: 250px;
+    transition: max-height 0.4s ease-in-out;
+  }
+  @media all and (max-width: 767px) {
+    &__button-read-more {
+      display: none;
+    }
+    &__logo {
+      margin-bottom: 40px;
+    }
+  }
+  &__button {
+    background-image: url('../img/swiper/btn/go.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__button-read-more {
+    position: relative;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: medium;
+    color: $graphite-color;
+  }
+
+
+  &__button-read-more > span {
+    margin-left: 20px;
+    margin-top:10px ;
+    display: inline-block;
+    vertical-align: middle;
+    // opacity: 0.6;
+  }
+  &__button-read-more::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    display: inline-block;
+    /* transform-origin: 50% 50%; */
+    background-image: url("../img/swiper/btn/expand.svg");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+    transform-origin: 50% 50%;
+  }
+  
+  &__button-read-more-tst::before {
+    content: "";
+    transform: rotate(180deg);
+  }
+
+  @media all and (max-width: 767px) {
+    &__button-read-more {
+      display: none;
+    }
+  }
+  @media all and (min-width: 1120px) {
+    &__logo {
+      width: 236px;
+      height: 72px;
+    }
+    &__wrapper {
+      margin-left: 32px;
+      margin-right: 23px;
+    }
+    &__hidden {
+      width: 240px;
+    }
+  }
+
+  &__logo:hover {
+    filter: opacity(0.6);
+    transition-property: filter;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+
+}
+
+.swiper-pagination-bullets-dynamic {
+  z-index: 1;
+}

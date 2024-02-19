@@ -1,0 +1,464 @@
+html {
+  	overflow-x: hidden;
+}
+/*----Оболочка----------------------------------------------------*/
+body {
+  font-family: "TT Lakes";
+  background: $platinum-color-gray;
+  min-width: 320px;
+  margin: 0;
+  font-style: light;
+  font-weight: 300;
+  height: 100vh;
+}
+.wrapper-fullPage {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.wrapper {
+  max-width: 1120px;
+  margin: 0 ;
+}
+/*----Меню в шапке----------------------------------------------------*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $white-color;
+  min-width: 320px;
+  min-height: 85px;
+}
+
+.nav__burger {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 160px;
+  margin-left: 5px;
+}
+.nav__burger button {
+  background-image: url("../img/burger.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 12px;
+}
+/*----Ровняем лого CPS----------------------------------------------------*/
+.nav__burger img {
+  margin-bottom: 5px;
+  margin-left: 35px;
+}
+
+@media all and (min-width: 768px) {
+  .nav__burger button::after {
+    display: inline-block;
+    align-self: center;
+    content: "";
+    width: 2px;
+    height: 30px;
+    background: $pale-blue-color;
+    margin: 5px 10px 5px 55px;
+  }
+  /* .nav__burger img {
+    margin-left: 25px;
+  } */
+  .nav__button_margin::before {
+    display: inline-block;
+    align-self: center;
+    content: "";
+    width: 2px;
+    height: 30px;
+    background: $pale-blue-color;
+    margin: 5px 10px 5px -57px;
+  }
+  /* .nav__button_margin::before {
+  content: "";
+	border-right: 2px solid #eaeaea;
+	width: 0px;
+	height: 30px;
+	position: absolute;
+	top: 30px;
+	left: 200px;
+} */
+}
+/*----Убираем точки li----------------------------------------------------*/
+.nav ul {
+  list-style: none;
+}
+/*----Добавляем перегородку перед repair----------------------------------------------------*/
+
+/*----Flex для правой колонки (column)----------------------------------------------------*/
+.nav__actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 280px;
+  margin-right: 15px;
+}
+/* перенос из html в bg */
+.nav__actions li:nth-of-type(1) button {
+  background-image: url("../img/call.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+.nav__actions li:nth-of-type(2) button {
+  background-image: url("../img/chat.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+.nav__actions li:nth-of-type(3) button {
+  background-image: url("../img/profile.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+.nav__actions li:nth-of-type(4) button {
+  background-image: url("../img/repair.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+.nav__actions li:nth-of-type(5) button {
+  background-image: url("../img/checkstatus.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+/*----Убираем видимость кнопок transparent - прозрачный фон----------------------------------------------------*/
+.nav__button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media all and (max-width: 767px) {
+  .nav__actions li:nth-child(1),
+  .nav__actions li:nth-child(2),
+  .nav__actions li:nth-child(3) {
+    display: none;
+  }
+  .nav__actions {
+    min-width: 90px;
+    padding-left: 0;
+  }
+  .nav__burger img {
+    margin-left: 15px;
+  }
+}
+
+@media all and (min-width: 1120px) {
+  .nav {
+    display: none;
+  }
+}
+/*----Меню на экране больше 1120px----------------------------------------------------*/
+.services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  margin-top: 24px;
+  max-width: 1120px;
+}
+.services__headline h1 {
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 10px;
+  color: $graphite-color;
+  margin-bottom: 18px;
+}
+
+.services__headline h1::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 4px solid $turquoise-color;
+  margin-right: 20px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  height: 45px;
+}
+
+.services__actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 300px;
+}
+.services__actions div:nth-of-type(1) button {
+  background-image: url("../img/repair.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+.services__actions div:nth-of-type(2) button {
+  background-image: url("../img/checkstatus.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+}
+/*----Убираем видимость меню для экрана меньше 1120px----------------------------------------------------*/
+@media all and (max-width: 1120px) {
+  .services__actions {
+    display: none;
+  }
+}
+/*------*/
+.services__actions_inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.services__actions_inline > span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.services__actions_inline > img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 25px;
+}
+
+.services__actions_inline > button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 25px;
+}
+.menu-scroll-full {
+  max-width: 1120px;
+}
+.menu-scroll ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  height: 62px;
+  padding-left: 10px;
+}
+
+.menu-scroll ul::-webkit-scrollbar {
+  width: 0;
+}
+
+.menu-scroll ul li {
+  height: 31px;
+  flex-shrink: 0;
+  margin: 11px 4px 11px;
+  padding: 7px 10px 0;
+}
+.menu-scroll {
+  margin-left: 12px;
+}
+
+/* .menu-scroll ul li:nth-child(1) {
+border: 2px solid #41f6d7;
+border-radius: 4px;
+background: white; 
+} */
+@media all and (max-width: 1131px) {
+  .menu-scroll ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .menu-scroll ul::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-scroll ul li:hover {
+  outline: 2px solid $turquoise-color;
+  border-radius: 4px;
+  filter: opacity(0.6);
+	transition-property: filter;
+	transition-duration: 0.25s;
+	transition-timing-function: linear; 
+}
+
+.menu-scroll a {
+  text-decoration: none;
+  color: $graphite-color;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*----Оформляем основной раздел---------------------------------------------------------------------*/
+
+.main {
+  display: flex;
+  max-width: 1120px;
+}
+
+@media all and (max-width: 767px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+
+.main__text-container {
+  // height: 145px;
+  // overflow: hidden;
+  margin-left: 24px;
+  margin-right: 10px;
+}
+
+.main__text-container p {
+  margin-top: 0px;
+}
+
+.main__image-container img {
+  height: auto;
+}
+
+@media all and (max-width: 1119px) {
+  .main__image-container img {
+    height: 207px;
+  }
+}
+@-moz-document url-prefix()
+{
+  .nav__actions li:nth-of-type(4) button {
+    margin-top: 6px;
+  }
+  
+}
+@media all and (max-width: 767px) {
+  .main__image-container img {
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+  }
+  @-moz-document url-prefix()
+{
+   .nav__actions li:nth-of-type(4) button {
+    margin-top: 0px;
+    margin-right: 5px;
+  } 
+  
+}
+}
+
+.main__text-container {
+  max-height: 107px;	
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out; 
+
+}
+.main__main_open {
+  max-height: 255px;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.main__button-read-more>span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.main__button-read-more {
+  position: relative;
+	padding: 0;
+ 	border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: medium;
+  color:$graphite-color;
+  margin-left: 40px;
+  margin-top: 8px;
+  // margin-bottom: 5px;
+}
+.main__button-read-more::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -20px;
+  display: inline-block;
+  /* transform-origin: 50% 50%; */
+  background-image: url("../img/swiper/btn/expand.svg");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+  transition-property: transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.main__button-read-more-tst::before {
+  content: "";
+  transform: rotate(180deg);
+}
+.wrapper__blur {
+  filter: blur(4px);
+}
+.wrapper__blur2 {
+  filter: blur(4px);
+}
+@media all and (min-width: 1440px) {
+  .wrapper-fullPage {
+    display: flex;
+  }
+}
+@media all and (min-width: 1120px) {
+  .wrapper-fullPage {
+    display: flex;
+  }
+}
+.nav__button:hover {
+	filter: opacity(0.6);
+	transition-property: filter;
+	transition-duration: 0.25s;
+	transition-timing-function: linear; 
+}
+.services__actions_inline button:hover {
+	filter: opacity(0.6);
+	transition-property: filter;
+	transition-duration: 0.25s;
+	transition-timing-function: linear; 
+}
+
+.blur-none {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: rgba(255,255,255,0.9)
+}
+.blur-block {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-color: rgba(255,255,255,0.9)
+}

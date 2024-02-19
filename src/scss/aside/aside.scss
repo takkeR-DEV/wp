@@ -1,0 +1,229 @@
+.aside {
+  position: fixed;
+  left: -340px;
+  top: 0;
+  z-index: 3;
+  background-color: $white-color;
+  width: 320px;
+  height: 100%;
+  min-height: 620px;
+  box-shadow: 20px 0px 20px -10px #808080;
+  font-style: medium;
+  transition: 0.4s ease-in-out;
+
+  &__wrapper {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white-color;
+    min-height: 85px;
+  }
+  &__open {
+    left: 0;
+    transition-property: transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+  }
+  
+  &__hidden {
+    transform: translateX(-340px);
+    transition-property: transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+  }
+  &__button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  &__header button:nth-of-type(1) {
+    background-image: url('../img/burgerClose.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  &__header button:nth-of-type(2) {
+    background-image: url('../img/search.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  &__logo {
+    margin-right: 70px;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+  &__nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: normal;
+    height: 470px;
+    margin-top: 0px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  ul {
+    padding-left: 0px;
+    list-style: none;
+  }
+  &__nav ul li {
+    position: relative;
+    color: $graphite-color;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__nav ul li:hover::before {
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 4px solid $turquoise-color;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    height: 32px;
+    content: '';
+    position: absolute;
+    left: -24px;
+
+    width: 4px;
+    height: 32px;
+  }
+  &__nav a {
+    text-decoration: none;
+    color: $graphite-color;
+    display: inline-block;
+    vertical-align: middle;
+    font-style: medium;
+    font-size: 16px;
+    padding: 5px;
+  }
+  &__nav ul li:hover {
+    opacity: 0.5;
+    transition-duration: 0.4s;
+  }
+  &__actions ul {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+  }
+  &__mail a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__phone {
+    margin-top: 0.75em;
+    margin-bottom: 2em;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    font-style: bold;
+  }
+
+  &__phone a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__lang ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85px;
+    position: relative;
+    bottom: 20px;
+  }
+  &__lang button {
+    font-size: 15px;
+  }
+  &__button_checked {
+    opacity: 0.6;
+  }
+  &__button_theme_line {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+  }
+  &__button_theme_line:after {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $turquoise-color;
+    content: '';
+    transition: width 0.3s ease-out;
+  }
+
+  &__button_theme_line:hover:after,
+  &__button_theme_line:focus:after {
+    width: 100%;
+  }
+  &__actions li:nth-child(1) button {
+    background-image: url('../img/phone.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  &__actions li:nth-child(2) button {
+    background-image: url('../img/chat.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  &__actions li:nth-child(3) button {
+    background-image: url('../img/profile.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  &__button:hover {
+    filter: opacity(0.6);
+    transition-property: filter;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+  @media screen and (max-height: 800px) {
+    &__nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-weight: normal;
+      height: 100%;
+      margin-top: 0px;
+      flex-shrink: 1;
+      flex-grow: 1;
+    }
+  }
+  @media all and (min-width: 1120px) {
+    &__full-wrapper {
+      height: calc(100vh+400px);
+      background-color: $white-color;
+    }
+    & {
+      position: sticky;
+      z-index: 1;
+      box-shadow: none;
+      height: 100vh;
+    }
+    &__close {
+      display: none;
+    }
+  }
+}
